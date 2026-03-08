@@ -119,7 +119,8 @@ app.delete("/queue", (req, res) => {
         state,
     });
 });
+const PORT = process.env.PORT || 4000;
 
-server.listen(4000, () => {
-    console.log("API + Socket running on http://localhost:4000");
+server.listen(PORT, () => {
+    console.log(`API + Socket running on port ${PORT}`);
 });
