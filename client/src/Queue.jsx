@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { socket } from "./socket";
-
+import { API_URL } from "./config";
 export default function Queue() {
     const [queue, setQueue] = useState(null);
 
     async function loadQueue() {
-        const res = await fetch("http://localhost:4000/queue");
+        const res = await fetch(`${API_URL}/queue`);
         const data = await res.json();
         setQueue(data);
     }

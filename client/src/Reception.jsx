@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { socket } from "./socket";
-
+import { API_URL } from "./config";
 export default function Reception() {
     const [queue, setQueue] = useState(null);
     const [name, setName] = useState("");
     const [error, setError] = useState("");
 
     async function loadQueue() {
-        const res = await fetch("http://localhost:4000/queue");
+        const res = await fetch(`${API_URL}/queue`);
         const data = await res.json();
         setQueue(data);
     }
@@ -22,7 +22,7 @@ export default function Reception() {
 
         setError("");
 
-        const res = await fetch("http://localhost:4000/queue", {
+        const res = await fetch(`${API_URL}/queue`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export default function Reception() {
     }
 
     async function resetQueue() {
-        await fetch("http://localhost:4000/queue", {
+        await fetch(`${API_URL}/queue`, {
             method: "DELETE",
         });
     }
