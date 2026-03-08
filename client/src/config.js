@@ -1,1 +1,1 @@
-export const API_URL = "https://clinic-queue-system-production-7ad9.up.railway.app/"
+export const API_URL = "https://clinic-queue-system-production-7ad9.up.railway.app"
